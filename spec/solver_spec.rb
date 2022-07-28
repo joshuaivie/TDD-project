@@ -11,15 +11,15 @@ describe Solver do
       expect(@solver.factorial(4)).to eq(24)
       expect(@solver.factorial(0)).to eq(1)
     end
-    # it 'should throw an Exception' do
-    #   expect(@solver.factorial(-5)).to raise_error('Integer must be a positive whole number')
-    # end
+    it 'should throw an Exception' do
+      expect { @solver.factorial(-5) }.to raise_error(Exception).with_message('Integer must be a positive whole number')
+    end
   end
 
   context 'check reverse method' do
     it 'the reverse method is called and accepts a single string parameter' do
       solver_mock = double('mock_object')
-      allow(solver_mock).to receive(:reverse).and_return('olleh')
+      allow(solver_mock).to receive(:reverse)
       expect(solver_mock).to receive(:reverse).with('hello')
       solver_mock.reverse('hello')
     end
