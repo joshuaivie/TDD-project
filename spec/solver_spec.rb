@@ -12,7 +12,7 @@ describe Solver do
       expect(@solver.factorial(0)).to eq(1)
     end
     it 'should throw an Exception' do
-      expect(@solver.factorial(-5)).to raise_error('Integer must be a posetive whole number')
+      expect(@solver.factorial(-5)).to raise_error('Integer must be a positive whole number')
     end
   end
 
