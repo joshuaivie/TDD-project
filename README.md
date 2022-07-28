@@ -1,5 +1,3 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 # TTD Project
 
 > This project explores the concept of test driven development.
