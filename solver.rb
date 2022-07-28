@@ -17,12 +17,11 @@ class Solver
   end
 
   def fizzbuzz(number)
-    case number
-    when (number % 3).zero? && (number % 5).zero?
+    if (number % 3).zero? && (number % 5).zero?
       'fizzbuzz'
-    when (number % 3).zero?
+    elsif (number % 3).zero?
       'fizz'
-    when (number % 5).zero?
+    elsif (number % 5).zero?
       'buzz'
     else
       number.to_s
