@@ -17,17 +17,22 @@ describe Solver do
   end
 
   context 'check reverse method' do
-    it 'should reverses the inputted string' do
+    it 'the reverse method is called and accepts a single string parameter' do
+      solver_mock = double('mock_object')
+      allow(solver_mock).to receive(:reverse).and_return('olleh')
+      expect(solver_mock).to receive(:reverse).with('hello')
+      solver_mock.reverse('hello')
+    end
+
+    it 'reverses the inputted string' do
       expect(@solver.reverse('hello')).to eq('hello')
       expect(@solver.reverse('red')).to eq('der')
       expect(@solver.reverse('chair')).to eq('riahc')
     end
   end
 
-
   context 'check fizzbuzz method' do
-
-    it "should return instance of a String" do
+    it 'should return instance of a String' do
       expect(@solver.fizzbuzz(15)).to be_instance_of(String)
     end
 
