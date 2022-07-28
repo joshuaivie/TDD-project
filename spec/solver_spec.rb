@@ -6,21 +6,36 @@ describe Solver do
   end
 
   context 'check for factorial method' do
-    it 'check for valid result' do
+    it 'should return valid result' do
       expect(@solver.factorial(5)).to eq(120)
       expect(@solver.factorial(4)).to eq(24)
       expect(@solver.factorial(0)).to eq(1)
     end
-    it 'check for Exception' do
+    it 'should throw an Exception' do
       expect(@solver.factorial(-5)).to raise_error('Integer must be a posetive whole number')
     end
   end
 
   context 'check reverse method' do
-    it 'reverses the inputted string' do
+    it 'should reverses the inputted string' do
       expect(@solver.reverse('hello')).to eq('hello')
       expect(@solver.reverse('red')).to eq('der')
       expect(@solver.reverse('chair')).to eq('riahc')
+    end
+  end
+
+
+  context 'check fizzbuzz method' do
+
+    it "should return instance of a String" do
+      expect(@solver.fizzbuzz(15)).to be_instance_of(String)
+    end
+
+    it 'should return the appropriate string' do
+      expect(@solver.fizzbuzz(15)).to eq('fizzbuzz')
+      expect(@solver.fizzbuzz(3)).to eq('fizz')
+      expect(@solver.fizzbuzz(5)).to eq('buzz')
+      expect(@solver.fizzbuzz(7)).to eq('7')
     end
   end
 end
